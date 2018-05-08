@@ -1,13 +1,15 @@
 package com.mybankapp.model;
 
+import java.sql.Date;
+
 public class TemporaryTable {
 	private String username;
-	private long accountno;
+	//private long accountno;
 	private String account_type;
 	private long amount;
 	private String password;
 	private String DOB;
-	private String phoneNo;
+	private long phoneNo;
 	private String address;
 	public String getUsername() {
 		return username;
@@ -15,12 +17,12 @@ public class TemporaryTable {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public long getAccountno() {
-		return accountno;
-	}
-	public void setAccountno(long accountno) {
-		this.accountno = accountno;
-	}
+//	public long getAccountno() {
+//		return accountno;
+//	}
+//	public void setAccountno(long accountno) {
+//		this.accountno = accountno;
+//	}
 	public String getAccount_type() {
 		return account_type;
 	}
@@ -45,10 +47,10 @@ public class TemporaryTable {
 	public void setDOB(String dOB) {
 		DOB = dOB;
 	}
-	public String getPhoneNo() {
+	public long getPhoneNo() {
 		return phoneNo;
 	}
-	public void setPhoneNo(String phoneNo) {
+	public void setPhoneNo(long phoneNo) {
 		this.phoneNo = phoneNo;
 	}
 	public String getAddress() {

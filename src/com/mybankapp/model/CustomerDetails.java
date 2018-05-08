@@ -4,7 +4,7 @@ public class CustomerDetails {
 
 	private int Id;
 	private String DOB;
-	private String phoneNo;
+	private long phoneNo;
 	private int CustomerId;
 	private String address;
 	public int getId() {
@@ -19,10 +19,10 @@ public class CustomerDetails {
 	public void setDOB(String dOB) {
 		DOB = dOB;
 	}
-	public String getPhoneNo() {
+	public long getPhoneNo() {
 		return phoneNo;
 	}
-	public void setPhoneNo(String phoneNo) {
+	public void setPhoneNo(long phoneNo) {
 		this.phoneNo = phoneNo;
 	}
 	public int getCustomerId() {

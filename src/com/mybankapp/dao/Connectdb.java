@@ -5,6 +5,9 @@ import java.io.FileReader;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Properties;
 
 //This class creates a sql connection object and return it after connecting it db
@@ -27,12 +30,27 @@ public class Connectdb {
 			String user=properties.getProperty("username");
 			String password=properties.getProperty("password");
 			Class.forName(drivername);
-			return DriverManager.getConnection(url, user, password);
+			return  DriverManager.getConnection(url, user, password);
+			
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 			return null;
 		}
 	}
+//	public static void main(String args[]) {
+//		Connection con=dbconnect();
+//		try {
+//			String sql="SELECT * FROM customer";
+//			PreparedStatement ps=con.prepareStatement(sql);
+//			ResultSet rs=ps.executeQuery();
+//			while(rs.next()) {
+//				System.out.println(rs.getString("username"));
+//			}
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 	
 }
