@@ -3,6 +3,7 @@ package com.mybankapp.model;
 public class CustomerDetails {
 
 	private int Id;
+	private String Name;
 	private String DOB;
 	private long phoneNo;
 	private int CustomerId;
@@ -36,5 +37,11 @@ public class CustomerDetails {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
 	}
 }

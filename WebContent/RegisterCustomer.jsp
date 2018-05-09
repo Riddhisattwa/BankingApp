@@ -9,7 +9,8 @@
 </head>
 <body bgcolor=lightblue>
 <center><form action="CreateAccount" method="post"><pre>
-NAME:     <input type="text"  name="username" placeholder="Name"><br>
+USERNAME:     <input type="text"  name="username" placeholder="Name"><br>
+NAME:     <input type="text"  name="name" placeholder="Name"><br>
 	     ACCOUNT TYPE:   <input type="radio" name="account_type" value="savings" >savings <input type="radio" name="account_type" value="current" >current  <input type="radio" name="account_type" value="fixed">fixed<br>
 AMOUNT:   <input type="text" name="amount" placeholder="enter amount"><br>
 PASSWORD: <input type="password" name="password"><br>

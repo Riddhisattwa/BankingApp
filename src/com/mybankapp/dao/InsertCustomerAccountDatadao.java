@@ -12,17 +12,17 @@ public class InsertCustomerAccountDatadao {
 		try {
 			  con=Connectdb.dbconnect();
 			  
-			  String sql="INSERT INTO temporarytable(username,account_type,amount,password,DOB,phoneNo,address)VALUES(?,?,?,?,?,?,?)";
+			  String sql="INSERT INTO temporarytable(username,name,account_type,amount,password,DOB,phoneNo,address)VALUES(?,?,?,?,?,?,?,?)";
 			  PreparedStatement pstmt= con.prepareStatement(sql);
 			  //System.out.println(temp.getUsername());
 			  pstmt.setString(1,temp.getUsername());
-			 // pstmt.setLong(2,temp.getAccountno());
-			  pstmt.setString(2,temp.getAccount_type());
-			  pstmt.setLong(3,temp.getAmount());
-			  pstmt.setString(4,temp.getPassword());
-			  pstmt.setString(5,temp.getDOB());
-			  pstmt.setLong(6,temp.getPhoneNo());
-			  pstmt.setString(7, temp.getAddress());
+			  pstmt.setString(2,temp.getName());
+			  pstmt.setString(3,temp.getAccount_type());
+			  pstmt.setLong(4,temp.getAmount());
+			  pstmt.setString(5,temp.getPassword());
+			  pstmt.setString(6,temp.getDOB());
+			  pstmt.setLong(7,temp.getPhoneNo());
+			  pstmt.setString(8, temp.getAddress());
 			  pstmt.execute();
 			  return true;
 		}catch (Exception e) {

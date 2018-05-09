@@ -5,6 +5,7 @@ import java.sql.Date;
 public class TemporaryTable {
 	private String username;
 	//private long accountno;
+	private String Name;
 	private String account_type;
 	private long amount;
 	private String password;
@@ -58,5 +59,11 @@ public class TemporaryTable {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
 	}
 }

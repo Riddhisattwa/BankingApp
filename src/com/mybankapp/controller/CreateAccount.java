@@ -35,6 +35,7 @@ public class CreateAccount extends HttpServlet {
 			  //System.out.println(username);
 			  //long accno=Long.parseLong(request.getParameter("accountno"));
 			 // temp.setAccountno(100000000 + random.nextInt(900000000));
+			  temp.setName(request.getParameter("name"));
 			  temp.setAccount_type(request.getParameter("account_type"));
 			  long amount=Long.parseLong(request.getParameter("amount"));
 			  temp.setAmount(amount);
