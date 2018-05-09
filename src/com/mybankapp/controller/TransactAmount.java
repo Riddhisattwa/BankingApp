@@ -53,7 +53,7 @@ public class TransactAmount extends HttpServlet {
 			  //pw.println(accountData.updatedataservice(customer));
 			 // cust.setAccountno(taccno);
 			  receiver.setAmount(balance);
-			  pw.println(accountData.transactData(sender,receiver));
+			  pw.println("Transaction is Successful");
 			  }else {
 				  pw.println("insufficient balance");
 			  }

@@ -9,6 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.catalina.ant.SessionsTask;
 
 import com.mybankapp.model.Customer;
 import com.mybankapp.model.CustomerAuthentication;
@@ -33,6 +36,8 @@ public class Login extends HttpServlet {
 			custAuth.setPassword(request.getParameter("password"));
 			customer.setCustomerAuth(custAuth);
 			if(getData.authVerify(customer)==true) {
+				HttpSession session=request.getSession();
+				session.setAttribute("username",request.getParameter("username") );
 				RequestDispatcher rd=request.getRequestDispatcher("CustomerHomePage.jsp");
 				rd.forward(request,response);
 			}else {

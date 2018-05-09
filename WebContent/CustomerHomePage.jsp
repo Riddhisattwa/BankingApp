@@ -7,6 +7,10 @@
 <title>Welcome</title>
 </head>
 <body bgcolor=lavender>
+<% 
+session=request.getSession(false);
+if(session.getAttribute("username")!=null){
+%>
 	<center><h1>Customer Home Page</h1><br>
 	<br>
 	<h3>Welcome</h3><br>
@@ -21,7 +25,13 @@
 	<br><br><br><br><br><br><br><br><br><br>
 	
 	<center>
-		<a href="index.html">Logout</a>
+		<a href="logout.jsp">Logout</a>
 	</center>
+	<%
+}else{
+	RequestDispatcher rd=request.getRequestDispatcher("Login.html");
+	rd.forward(request, response);
+}
+	%>
 </body>
 </html>
