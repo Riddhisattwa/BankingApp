@@ -35,7 +35,9 @@ public class ViewBalance extends HttpServlet {
 		  GetAmountservice amountData=new GetAmountservice();
 		  Customer customer=new Customer();
 		  customer.setAccountno(accno);
-		  pw.println(amountData.getdataservice(customer));
+		  long balance=amountData.getdataservice(customer);
+		  pw.println("Your Account Balance is  "+balance);
+		  
 	  }catch(Exception e) {
 			e.printStackTrace();
 		}

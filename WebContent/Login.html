@@ -3,12 +3,46 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
+<center><marquee behavior="alternate"><h2 style="color: white;font-size: 43px;"><i><u>Enter Your Details</u></i></h2></marquee></center>
+<style>
+input {
+    border: 2px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 2px  rgba(0,0,0,1)
+            0 0 4px rgba(0,0,0,1); 
+    -moz-box-shadow: 
+      inset 0 0 2px  rgba(0,0,0,1),
+            0 0 4px rgba(0,0,0,1); 
+    box-shadow: 
+      inset 0 0 2px  rgba(0,0,0,0.1),
+            0 0 4px rgba(0,0,0,0.1); 
+    padding: 5px;
+    background: rgba(0,0,128,0.7);
+    margin: 0 0 10px 0;
+}
+::placeholder{
+color: white;
+}
+</style>
 </head>
-<body>
-<form action="Login" method="post">
+<body style="background: url('http://i.dailymail.co.uk/i/pix/2012/09/27/article-2209474-0CFE87C700000578-772_468x312.jpg');background-size: 100% 300%">
+<center><form action="Login" method="post" >
+
+<pre style="color: red; "><h2>
+USERNAME:  <input type="email"  name="username" placeholder="Email" style="margin-left:30px;" ><br>
+PASSWORD:     <input type="password"  name="password" placeholder="Password" style="margin-right:10px"><br>
+<br>
+</h2></pre>
+
+<button type="submit">Submit</button>
+
+</form>
+
+</body>
+<!-- <form action="Login" method="post">
 Email:<input type="email" name="username"><br>
 Password:<input type="password" name="password"><br>
 <input type="submit" value="submit">
-</form>
-</body>
+</form>-->
+
 </html>

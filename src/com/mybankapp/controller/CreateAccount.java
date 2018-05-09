@@ -52,21 +52,21 @@ public class CreateAccount extends HttpServlet {
 			  float tenure=Float.parseFloat(request.getParameter("tenure"));
 			  InsertDataservice insertData=new InsertDataservice();
 			  if(insertData.insertdataservice(temp)==true)
-				  pw.println("Data inserted!");
+				  pw.println("You will get a mail shortly!");
 			  else
-				  pw.println("error");
+				  pw.println("Minimum amount for fixed account is 10000");
 			  temp.setTenure(tenure);
 			  }else if(account_type.equalsIgnoreCase("current")==true && amount>=10000){
 				  temp.setTenure(0);
 				  InsertDataservice insertData=new InsertDataservice();
 				  if(insertData.insertdataservice(temp)==true)
-					  pw.println("Data inserted!");
+					  pw.println("You will get a mail shortly!");
 				  else
-					  pw.println("error");
+					  pw.println("Minimum amount for current account is 10000");
 			  }else if(account_type.equalsIgnoreCase("savings")==true) {
 				  InsertDataservice insertData=new InsertDataservice();
 				  if(insertData.insertdataservice(temp)==true)
-					  pw.println("Data inserted!");
+					  pw.println("you will get a mail shortly!");
 				  else
 					  pw.println("error");
 			  }else {

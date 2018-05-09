@@ -48,7 +48,9 @@ public class DepositAmount extends HttpServlet {
 				  UpdateAccountservice accountData=new UpdateAccountservice();
 				  customer.setAmount(balance);
 				 // customer.setAccountno(accno);
-				  pw.println(accountData.updatedataservice(customer));
+				 long tamount=accountData.updatedataservice(customer);
+				 pw.println("your account is credited by "+credit);
+				 pw.println("Your current balance is  "+tamount);
 				  }else {
 					  pw.println("Incorrect Account Type");
 				  }

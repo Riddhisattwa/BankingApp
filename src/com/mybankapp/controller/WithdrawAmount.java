@@ -53,7 +53,9 @@ public class WithdrawAmount extends HttpServlet {
 			  UpdateAccountservice accountData=new UpdateAccountservice();
 			  //customer.setAccountno(accno);
 			  customer.setAmount(balance);
-			  pw.println(accountData.updatedataservice(customer));
+			  long tamount=accountData.updatedataservice(customer);
+			  pw.println("Your Account is debited by  "+debit);
+			  pw.println("Your Current Balance is "+tamount);
 			  }
 			  }
 		  }catch(Exception e) {

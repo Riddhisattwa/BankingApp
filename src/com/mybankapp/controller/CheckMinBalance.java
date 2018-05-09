@@ -36,11 +36,13 @@ public class CheckMinBalance extends HttpServlet {
 			  Customer customer=new Customer();
 			  customer.setAccountno(accno);
 			 long balance= amountData.getdataservice(customer);
+			 pw.println("Minimum Balance is 500");
 			 if(balance<500) {
 				 pw.println("Your account balance is lower than minimum balance");
 			 }
 			 else {
-			  pw.println(amountData.getdataservice(customer));
+			  long tamount=amountData.getdataservice(customer);
+			  pw.println("Your Account Balance is "+tamount);
 			 }
 		  }catch(Exception e) {
 				e.printStackTrace();

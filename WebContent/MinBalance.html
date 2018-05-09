@@ -2,12 +2,38 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<center><h2><i><u>Enter Details to Check Your Minimum Balance</u></i></center>
+<title>Login</title>
+<center><marquee behavior="alternate"><h2 style="color: white;font-size: 43px;"><i><u>Enter Your Details to Check Minimum Balance</u></i></h2></marquee></center>
+<style>
+input {
+    border: 2px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 2px  rgba(0,0,0,1)
+            0 0 4px rgba(0,0,0,1); 
+    -moz-box-shadow: 
+      inset 0 0 2px  rgba(0,0,0,1),
+            0 0 4px rgba(0,0,0,1); 
+    box-shadow: 
+      inset 0 0 2px  rgba(0,0,0,0.1),
+            0 0 4px rgba(0,0,0,0.1); 
+    padding: 5px;
+    background: rgba(0,0,128,0.7);
+    margin: 0 0 10px 0;
+}
+::placeholder{
+color: white;
+}
+</style>
 </head>
-<body bgcolor=lightcoral>
-<center><form action="CheckMinBalance" method="post">
-Account Number:<input type="text"  name="accountno" placeholder="accountno" >
+<body style="background: url('http://i.dailymail.co.uk/i/pix/2012/09/27/article-2209474-0CFE87C700000578-772_468x312.jpg');background-size: 100% 300%">
+<center><form action="CheckMinBalance" method="post" >
+
+<pre style="color: red; "><h2>
+Account Number:<input type="text"  name="accountno" placeholder="accountno" ><br>
+
+<br>
+</h2></pre>
+
 <button type="submit">Submit</button>
 </form>
 </body>
