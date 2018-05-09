@@ -48,17 +48,31 @@ public class CreateAccount extends HttpServlet {
 			  long phone=Long.parseLong(request.getParameter("phoneNo"));
 			  temp.setPhoneNo(phone);
 			  temp.setAddress(request.getParameter("address"));
-			  if(account_type.equalsIgnoreCase("fixed")==true) {
+			  if(account_type.equalsIgnoreCase("fixed")==true && amount>=10000) {
 			  float tenure=Float.parseFloat(request.getParameter("tenure"));
-			  temp.setTenure(tenure);
-			  }else {
-				  temp.setTenure(0);
-			  }
 			  InsertDataservice insertData=new InsertDataservice();
 			  if(insertData.insertdataservice(temp)==true)
 				  pw.println("Data inserted!");
 			  else
 				  pw.println("error");
+			  temp.setTenure(tenure);
+			  }else if(account_type.equalsIgnoreCase("current")==true && amount>=10000){
+				  temp.setTenure(0);
+				  InsertDataservice insertData=new InsertDataservice();
+				  if(insertData.insertdataservice(temp)==true)
+					  pw.println("Data inserted!");
+				  else
+					  pw.println("error");
+			  }else if(account_type.equalsIgnoreCase("savings")==true) {
+				  InsertDataservice insertData=new InsertDataservice();
+				  if(insertData.insertdataservice(temp)==true)
+					  pw.println("Data inserted!");
+				  else
+					  pw.println("error");
+			  }else {
+				pw.print("error");  
+			  }
+			  
 		  }catch(Exception e) {
 				e.printStackTrace();
 			}
