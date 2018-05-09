@@ -36,7 +36,8 @@ public class CreateAccount extends HttpServlet {
 			  //long accno=Long.parseLong(request.getParameter("accountno"));
 			 // temp.setAccountno(100000000 + random.nextInt(900000000));
 			  temp.setName(request.getParameter("name"));
-			  temp.setAccount_type(request.getParameter("account_type"));
+			  String account_type=request.getParameter("account_type");
+			  temp.setAccount_type(account_type);
 			  long amount=Long.parseLong(request.getParameter("amount"));
 			  temp.setAmount(amount);
 			  temp.setPassword(request.getParameter("password"));
@@ -47,6 +48,12 @@ public class CreateAccount extends HttpServlet {
 			  long phone=Long.parseLong(request.getParameter("phoneNo"));
 			  temp.setPhoneNo(phone);
 			  temp.setAddress(request.getParameter("address"));
+			  if(account_type.equalsIgnoreCase("fixed")==true) {
+			  float tenure=Float.parseFloat(request.getParameter("tenure"));
+			  temp.setTenure(tenure);
+			  }else {
+				  temp.setTenure(0);
+			  }
 			  InsertDataservice insertData=new InsertDataservice();
 			  if(insertData.insertdataservice(temp)==true)
 				  pw.println("Data inserted!");

@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mybankapp.model.Customer;
 import com.mybankapp.services.GetAmountservice;
+import com.mybankapp.services.GetTypeservice;
+import com.mybankapp.services.Transactionservice;
 import com.mybankapp.services.UpdateAccountservice;
 
 /**
@@ -30,25 +32,33 @@ public class TransactAmount extends HttpServlet {
 			  long tamount=Long.parseLong(request.getParameter("tamount"));
 			  long saccno=Long.parseLong(request.getParameter("saccountno"));
 			  long taccno=Long.parseLong(request.getParameter("taccountno"));
+			  //String stype=request.getParameter("saccount_type");
+			  //String ttype=request.getParameter("taccount_type");
 			  GetAmountservice amountData=new GetAmountservice();
-			  Customer customer=new Customer();
-			  customer.setAccountno(saccno);
-			  long amount=amountData.getdataservice(customer);
-			  Customer cust=new Customer();
-			  cust.setAccountno(taccno);
-			  long balance=amountData.getdataservice(cust);
+			  GetTypeservice typeData=new GetTypeservice();
+			  Customer sender=new Customer();
+			  sender.setAccountno(saccno);
+			  //customer.setAccount_type(stype);
+			  long amount=amountData.getdataservice(sender);
+			  Customer receiver=new Customer();
+			  receiver.setAccountno(taccno);
+			  long balance=amountData.getdataservice(receiver);
+			  if(typeData.gettypeservice(sender).equalsIgnoreCase("fixed")==false && typeData.gettypeservice(receiver).equalsIgnoreCase("fixed")==false) {
 			  if(amount-tamount>0) {
 				  amount=amount-tamount;
 				  balance=balance+tamount;
-			  UpdateAccountservice accountData=new UpdateAccountservice();
+			  Transactionservice accountData=new Transactionservice();
 			  //customer.setAccountno(saccno);
-			  customer.setAmount(amount);
-			  pw.println(accountData.updatedataservice(customer));
+			  sender.setAmount(amount);
+			  //pw.println(accountData.updatedataservice(customer));
 			 // cust.setAccountno(taccno);
-			  cust.setAmount(balance);
-			  pw.println(accountData.updatedataservice(cust));
+			  receiver.setAmount(balance);
+			  pw.println(accountData.transactData(sender,receiver));
 			  }else {
 				  pw.println("insufficient balance");
+			  }
+			  }else {
+				  pw.println("Incorrect Account Type");
 			  }
 		}catch(Exception e) {
 			e.printStackTrace();

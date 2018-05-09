@@ -6,6 +6,8 @@ public class Customer {
 	private long accountno;
 	private String account_type;
 	private long amount;
+	private float tenure;
+	private String accountcreationtime;
 	private CustomerDetails customerDetail;
 	private CustomerAuthentication customerAuth;
 	public String getUsername() {
@@ -50,6 +52,18 @@ public class Customer {
 	}
 	public void setAmount(long amount) {
 		this.amount = amount;
+	}
+	public float getTenure() {
+		return tenure;
+	}
+	public void setTenure(float tenure) {
+		this.tenure = tenure;
+	}
+	public String getAccountcreationtime() {
+		return accountcreationtime;
+	}
+	public void setAccountcreationtime(String accountcreationtime) {
+		this.accountcreationtime = accountcreationtime;
 	}
 	
 	

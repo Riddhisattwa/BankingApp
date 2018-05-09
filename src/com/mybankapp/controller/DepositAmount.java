@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.mybankapp.dao.Connectdb;
 import com.mybankapp.model.Customer;
 import com.mybankapp.services.GetAmountservice;
+import com.mybankapp.services.GetTypeservice;
 import com.mybankapp.services.UpdateAccountservice;
 
 /**
@@ -36,16 +37,21 @@ public class DepositAmount extends HttpServlet {
 				  long accno=Long.parseLong(request.getParameter("accountno"));
 				  //String type=request.getParameter("account_type");
 				  GetAmountservice amountData=new GetAmountservice();
+				  GetTypeservice typeData=new GetTypeservice();
 				  Customer customer=new Customer();
 				  customer.setAccountno(accno);
 				  //customer.setAccount_type(type);
 				  //String type=amountData.gettypeservice(customer);
 				  long amount=amountData.getdataservice(customer);
+				  if(typeData.gettypeservice(customer).equalsIgnoreCase("fixed")==false){
 				  long balance=amount+credit;
 				  UpdateAccountservice accountData=new UpdateAccountservice();
 				  customer.setAmount(balance);
 				 // customer.setAccountno(accno);
 				  pw.println(accountData.updatedataservice(customer));
+				  }else {
+					  pw.println("Incorrect Account Type");
+				  }
 			  }catch(Exception e) {
 					e.printStackTrace();
 				}

@@ -2,23 +2,30 @@ package com.mybankapp.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.mybankapp.model.Customer;
 
-public class UpdateCustomerAccountDatadao {
-	public  Customer updatedata(Customer customer) {
+public class TransactAmountdao {
+	public  boolean doTransaction(Customer sourceCustomer,Customer receivingCustomer) {
 		Connection  con=null;
 		try {
 			  con=Connectdb.dbconnect();
+			  con.setAutoCommit(false);
 			  String sql="UPDATE customer SET amount=? WHERE accountno=? AND account_type=?";
 			  PreparedStatement pstmt= con.prepareStatement(sql);
-			  pstmt.setLong(1,customer.getAmount());
-			  pstmt.setLong(2,customer.getAccountno());
-			  pstmt.setString(3,customer.getAccount_type());
+			  pstmt.setLong(1,sourceCustomer.getAmount());
+			  pstmt.setLong(2,sourceCustomer.getAccountno());
+			  pstmt.setString(3,sourceCustomer.getAccount_type());
 			  pstmt.executeUpdate();
-			  return customer;
+			  sql="UPDATE customer SET amount=? WHERE accountno=? AND account_type=?";
+			  pstmt= con.prepareStatement(sql);
+			  pstmt.setLong(1,receivingCustomer.getAmount());
+			  pstmt.setLong(2,receivingCustomer.getAccountno());
+			  pstmt.setString(3,receivingCustomer.getAccount_type());
+			  pstmt.executeUpdate();
+			  con.commit();
+			  return true;
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -28,7 +35,7 @@ public class UpdateCustomerAccountDatadao {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			return null;
+			return false;
 		}
 		finally {
 			try {
@@ -41,3 +48,5 @@ public class UpdateCustomerAccountDatadao {
 		}
 	}
 	}
+
+

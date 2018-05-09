@@ -21,7 +21,8 @@ public  Customer getdata(Customer customer) {
 			  customer.setId(rs.getInt("Id"));
 			  customer.setUsername(rs.getString("username"));
 			  customer.setAccount_type(rs.getString("account_type"));
-			  customer.setAmount(rs.getLong("amount"));		  
+			  customer.setAmount(rs.getLong("amount"));	
+			  customer.setAccountcreationtime(rs.getTimestamp("accountcreationtime").toString());
 			  
 	}
 		  return customer;

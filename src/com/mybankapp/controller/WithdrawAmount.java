@@ -43,7 +43,7 @@ public class WithdrawAmount extends HttpServlet {
 			  long amount=amountData.getdataservice(customer);
 			  String type=data.gettypeservice(customer);
 			  System.out.println(type);
-			  if(type.equals("fixed")){
+			  if(type.equalsIgnoreCase("fixed")){
 				  pw.println("You can not withdraw ");
 			  }else {
 			  if(amount<500) {

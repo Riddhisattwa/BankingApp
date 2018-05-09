@@ -12,6 +12,13 @@ public class TemporaryTable {
 	private String DOB;
 	private long phoneNo;
 	private String address;
+	private float tenure;
+	public float getTenure() {
+		return tenure;
+	}
+	public void setTenure(float tenure) {
+		this.tenure = tenure;
+	}
 	public String getUsername() {
 		return username;
 	}

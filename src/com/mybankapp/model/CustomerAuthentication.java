@@ -3,7 +3,7 @@ package com.mybankapp.model;
 public class CustomerAuthentication {
 
 	private int Id;
-	private int CustomerId;
+	private long CustomerId;
 	private String password;
 	public int getId() {
 		return Id;
@@ -11,10 +11,10 @@ public class CustomerAuthentication {
 	public void setId(int id) {
 		Id = id;
 	}
-	public int getCustomerId() {
+	public long getCustomerId() {
 		return CustomerId;
 	}
-	public void setCustomerId(int customerId) {
+	public void setCustomerId(long customerId) {
 		CustomerId = customerId;
 	}
 	public String getPassword() {

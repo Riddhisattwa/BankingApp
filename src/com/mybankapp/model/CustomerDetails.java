@@ -6,7 +6,7 @@ public class CustomerDetails {
 	private String Name;
 	private String DOB;
 	private long phoneNo;
-	private int CustomerId;
+	private long CustomerId;
 	private String address;
 	public int getId() {
 		return Id;
@@ -26,10 +26,10 @@ public class CustomerDetails {
 	public void setPhoneNo(long phoneNo) {
 		this.phoneNo = phoneNo;
 	}
-	public int getCustomerId() {
+	public long getCustomerId() {
 		return CustomerId;
 	}
-	public void setCustomerId(int customerId) {
+	public void setCustomerId(long customerId) {
 		CustomerId = customerId;
 	}
 	public String getAddress() {

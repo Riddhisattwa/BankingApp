@@ -10,5 +10,10 @@ public class GetTemporaryAccountDataservice {
 		GetTemporaryAccountDatadao temporaryData=new GetTemporaryAccountDatadao();
 		return temporaryData.getdata();
 	}
+	public TemporaryTable getUserByUsername(TemporaryTable customer) {
+		GetTemporaryAccountDatadao temp=new GetTemporaryAccountDatadao();
+		return temp.getSingleUserbyUsername(customer);
+	}
 
 }
+ 
