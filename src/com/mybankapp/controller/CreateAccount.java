@@ -48,7 +48,7 @@ public class CreateAccount extends HttpServlet {
 			  long phone=Long.parseLong(request.getParameter("phoneNo"));
 			  temp.setPhoneNo(phone);
 			  temp.setAddress(request.getParameter("address"));
-			  if(account_type.equalsIgnoreCase("fixed")==true) {
+			  if(account_type.equalsIgnoreCase("fixed")==true &&amount>10000) {
 			  float tenure=Float.parseFloat(request.getParameter("tenure"));
 			  temp.setTenure(tenure);
 			  System.out.println(tenure);
