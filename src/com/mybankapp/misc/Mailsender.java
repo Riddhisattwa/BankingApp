@@ -37,8 +37,9 @@ public static boolean sendmail(String message,String to) {
 		
 	}catch(Exception e) {
 		System.out.println(e.getMessage());
+		return false;
 	}
-	return false;
+	
 	
 }
 }
