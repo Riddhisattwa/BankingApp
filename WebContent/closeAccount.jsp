@@ -5,10 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<center><h2><i><u>Enter Details to Close Your Account</u></i></center>
 </head>
-<body>
-<form action="DeleteAccount" method="post">
-Account No:<input type="text" name="accountno"><br>
+<body bgcolor=lightcoral>
+<center><form action="DeleteAccount" method="post">
+Account No:<input type="text" name="accountno">
 <input type="submit" value="submit">
 </form>
 </body>

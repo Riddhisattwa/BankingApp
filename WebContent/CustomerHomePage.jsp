@@ -21,6 +21,7 @@ if(session.getAttribute("username")!=null){
 		<a href="Debit.jsp">Withdraw </a><br>
 		<a href="MinBalance.html">Check Minimum Balance </a><br>
 		<a href="Transaction.jsp">Transfer Money </a><br>
+		<a href="closeAccount.jsp">Delete Account</a>
 	</center>
 	<br><br><br><br><br><br><br><br><br><br>
 	

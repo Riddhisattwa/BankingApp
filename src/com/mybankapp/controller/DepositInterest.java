@@ -51,7 +51,7 @@ public class DepositInterest extends HttpServlet {
 		    if(customer.getAccount_type().equalsIgnoreCase("savings")==true) {
 		    	if((int)duration>=1) {
 		    		double interest=(customer.getAmount()*5*1)/100;
-		    		pw.println("Interest="+interest);
+		    		pw.println("Interest= "+interest);
 		    	}
 		    	else {
 		    		pw.println("Interest Calculated annually");
@@ -60,7 +60,7 @@ public class DepositInterest extends HttpServlet {
 		    	double x=Math.pow((1+(0.10/1)),(1*customer.getTenure()));
 		    	pw.println(x);
 		    	double interest=customer.getAmount()*Math.pow((1+(0.10/1)), (1)*customer.getTenure())-customer.getAmount();
-		    	pw.println(interest);
+		    	pw.println("Interest= "+interest);
 		    }else {
 		    	pw.println("Error");
 		    }
