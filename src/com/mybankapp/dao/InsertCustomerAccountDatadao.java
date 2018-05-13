@@ -12,7 +12,7 @@ public class InsertCustomerAccountDatadao {
 		Connection  con=null;
 		try {
 			  con=Connectdb.dbconnect();
-			  
+			  System.out.println("INSIDE DAO="+temp.getTenure());
 			  String sql="INSERT INTO temporarytable(username,name,account_type,amount,password,DOB,phoneNo,address,tenure)VALUES(?,?,?,?,?,?,?,?,?)";
 			  PreparedStatement pstmt= con.prepareStatement(sql);
 			  //System.out.println(temp.getUsername());

@@ -10,7 +10,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/DELL/Desktop/mysql-connector-java-5.1.42/mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/DELL/Desktop/javamail-1.4.7/mail.jar"/>
+	<classpathentry kind="lib" path="D:/mysql-connector-java-5.0.8/mysql-connector-java-5.0.8/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="lib" path="D:/javamail-1.4.7/mail.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
